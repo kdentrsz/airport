@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}User Profile - Airport Finder{% endblock %}
+
+{% block content %}
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h1 class="text-center mb-4">User Profile</h1>
+            <p><strong>Email:</strong> {{ email }} <a href="{{ url_for('change_email') }}">Change Email</a></p>
+            {% if iata_code %}
+                <p><strong>Last Chosen IATA Code:</strong> {{ iata_code }}</p>
+                {% if city %}
+                    <p><strong>City:</strong> {{ city }}</p>
+                {% endif %}
+                <p><strong>Chosen At:</strong> {{ chosen_at }}</p>
+                <form action="{{ url_for('delete_choice') }}" method="post">
+                    <button type="submit" class="btn btn-danger btn-sm">Delete Choice</button>
+                </form>
+            {% else %}
+                <p>You haven't chosen an airport yet.</p>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

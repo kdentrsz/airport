@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Search Airports - Airport Finder{% endblock %}
+
+{% block content %}
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h1 class="text-center mb-4">Welcome to the Airport Finder</h1>
+            <form action="{{ url_for('airports') }}" method="get">
+                <div class="mb-3">
+                    <label for="origin" class="form-label">Enter Origin IATA Code:</label>
+                    <input type="text" class="form-control" id="origin" name="origin" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Find Airports</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
