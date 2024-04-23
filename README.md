@@ -1,1 +1,1 @@
-all of  html files should be in templates folder 
+visiem HTML failiem jābūt mapē "templates"
